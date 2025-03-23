@@ -1,97 +1,137 @@
+/* Estilos generales */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f0f8ff;
+    background: linear-gradient(to right, #e3f2fd, #bbdefb);
+    color: #333;
 }
 
+/* Encabezado */
 header {
-    background-color: #333;
+    background-color: #1976d2;
     color: white;
     text-align: center;
-    padding: 1rem 0;
+    padding: 1.5rem 0;
+    font-size: 1.5rem;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
 }
 
+/* Contenedor principal */
 section {
     max-width: 800px;
-    margin: 20px auto;
-    padding: 20px;
-    background-color: rgb(203, 240, 241);
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin: 30px auto;
+    padding: 25px;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
-h1{
+/* Estilos de texto */
+h1 {
     color: #ffffff;
-    text-align: center;
-    
 }
 
-h2{
-    color: #000000;
+h2 {
+    color: #1976d2;
     text-align: center;
-    
+    margin-bottom: 15px;
 }
-h3{
-    color: #000000;
-    
+
+h3 {
+    color: #1565c0;
 }
+
 p {
-    line-height: 1.6;
+    line-height: 1.8;
     text-align: center;
-    
 }
 
+/* Imagen con efecto */
 img {
     display: block;
-    margin: 0 auto 20px auto;
+    margin: 0 auto 20px;
     border-radius: 50%;
+    border: 3px solid #1976d2;
+    transition: transform 0.3s ease;
 }
 
+img:hover {
+    transform: scale(1.1);
+}
+
+/* Listas */
 ul, ol {
     margin: 20px 0;
-    padding-left: 20px;
-    
+    padding-left: 25px;
 }
 
-li {
-    margin-bottom: 10px;
-}
-
+/* Tablas estilizadas */
 table {
     width: 100%;
     border-collapse: collapse;
-    margin-bottom: 20px;
-}
-
-table, th, td {
-    border: 1px solid #000000;
+    margin-top: 15px;
+    background: #e3f2fd;
+    border-radius: 8px;
+    overflow: hidden;
 }
 
 th, td {
-    padding: 10px;
+    padding: 12px;
     text-align: center;
 }
 
+th {
+    background: #1976d2;
+    color: white;
+}
+
+tr:nth-child(even) {
+    background: #bbdefb;
+}
+
+/* Formulario de contacto */
 form {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 12px;
+    background: #f1f8e9;
+    padding: 20px;
+    border-radius: 10px;
 }
 
-input, button {
-    padding: 10px;
+label {
+    font-weight: bold;
+    color: #333;
+}
+
+input {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #90caf9;
+    border-radius: 6px;
+    transition: all 0.3s ease;
     font-size: 16px;
 }
 
+input:focus {
+    border-color: #1976d2;
+    box-shadow: 0px 0px 10px rgba(25, 118, 210, 0.5);
+    outline: none;
+}
+
 button {
-    background-color: #333;
+    padding: 12px;
+    background: #1976d2;
     color: white;
     border: none;
+    border-radius: 6px;
     cursor: pointer;
-    border-radius: 5px;
+    font-size: 18px;
+    transition: all 0.3s ease;
 }
 
 button:hover {
-    background-color: #555;
+    background: #1565c0;
+    transform: scale(1.05);
 }
