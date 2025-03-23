@@ -135,3 +135,11 @@ button:hover {
     background: #1565c0;
     transform: scale(1.05);
 }
+
+
+.error {
+    color: red;
+    font-size: 14px;
+    display: block;
+    margin-top: 5px;
+}
