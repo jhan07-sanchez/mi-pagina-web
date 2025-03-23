@@ -1,52 +1,50 @@
-document.addEventListener('DOMContentLoaded', function() {
-    const formulario = document.querySelector('#form');
-    const nombreinput = document.getElementById('nombre');
-    const motivoinput = document.getElementById('motivo');
-    const corrreoinput = document.getElementById('corrreo');
+document.addEventListener('DOMContentLoaded', function () {
+    const formulario = document.querySelector('form'); // Selecciona el formulario correctamente
+    const nombreInput = document.getElementById('nombre');
+    const motivoInput = document.getElementById('motivo');
+    const correoInput = document.getElementById('correo'); // Corregí la variable
 
-    //Funcion para validar el campo de nombre
+    // Función para validar el campo de nombre
     function validarNombre() {
-        const nombre = nombreinput.value.trim0;
+        const nombre = nombreInput.value.trim();
         if (nombre.length < 3) {
-            mostrarError(nombreinput,'El nombre debe contener al menos 3 caracteres');
+            mostrarError(nombreInput, 'El nombre debe contener al menos 3 caracteres');
             return false;
-
-        }else{
-            limpiarError(nombreinput);
+        } else {
+            limpiarError(nombreInput);
             return true;
         }
     }
 
-    //Funcion para validar el campo de motivo de contacto
+    // Función para validar el campo de motivo de contacto
     function validarMotivo() {
-        const motivo = motivoinput.value.trim0;
+        const motivo = motivoInput.value.trim(); // Corregí el error de trim0
         if (motivo === '') {
-            mostrarError(motivoinput,'Debe ingresar un motivo de contacto');
+            mostrarError(motivoInput, 'Debe ingresar un motivo de contacto');
             return false;
-
-        }else{
-            limpiarError(motivoinput);
+        } else {
+            limpiarError(motivoInput);
             return true;
         }
     }
 
-     //Funcion para validar el correo electronico
+    // Función para validar el correo electrónico
     function validarCorreo() {
-        const correo = corrreoinput.value.trim();
-        const expresion = /\w+@\w+\.[a-z]{2,}$/;
+        const correo = correoInput.value.trim();
+        const expresion = /^\w+@\w+\.[a-z]{2,}$/;
         if (!expresion.test(correo)) {
-            mostrarError(corrreoinput,'Debe ingresar un correo electronico valido');
+            mostrarError(correoInput, 'Debe ingresar un correo electrónico válido');
             return false;
-        }else{
-            limpiarError(corrreoinput);
+        } else {
+            limpiarError(correoInput);
             return true;
         }
     }
-    
-    //Funcion para mostrar un mensaje de error
+
+    // Función para mostrar un mensaje de error
     function mostrarError(input, mensaje) {
         let error = input.nextElementSibling;
-        if (!error||!error.classList.contains('error')) {
+        if (!error || !error.classList.contains('error')) {
             error = document.createElement('span');
             error.classList.add('error');
             input.parentNode.insertBefore(error, input.nextElementSibling);
@@ -55,7 +53,7 @@ document.addEventListener('DOMContentLoaded', function() {
         input.style.border = '2px solid red';
     }
 
-    //Funcion para limpiar errores
+    // Función para limpiar errores
     function limpiarError(input) {
         let error = input.nextElementSibling;
         if (error && error.classList.contains('error')) {
@@ -64,25 +62,22 @@ document.addEventListener('DOMContentLoaded', function() {
         input.style.border = '2px solid #90caf9';
     }
 
-    //Evento para validar en tiempo real
-    nombreinput.addEventListener('input', validarNombre);
-    motivoinput.addEventListener('input', validarMotivo);
-    corrreoinput.addEventListener('input', validarCorreo);
+    // Evento para validar en tiempo real
+    nombreInput.addEventListener('input', validarNombre);
+    motivoInput.addEventListener('input', validarMotivo);
+    correoInput.addEventListener('input', validarCorreo);
 
-
-    //Evento de envio de formulario
-    formulario.addEventListener('submit', function(event) {
+    // Evento de envío del formulario
+    formulario.addEventListener('submit', function (event) {
         event.preventDefault();
 
         const esNombreValido = validarNombre();
-        const esMotivoValido = validarMotivo(); 
+        const esMotivoValido = validarMotivo();
         const esCorreoValido = validarCorreo();
 
-
         if (esNombreValido && esMotivoValido && esCorreoValido) {
-            formulario.reset();
-            alert("Formulario enviado con exito! 🎉");
-            formulario.reset();
+            alert('Formulario enviado con éxito! 🎉');
+            formulario.reset(); // Resetea el formulario una vez
         }
     });
 });
